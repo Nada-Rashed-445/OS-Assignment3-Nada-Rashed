@@ -72,14 +72,18 @@ class SharedResources {
             completedProcessCount++;
         } finally {
             contextSwitchLock.unlock();
-        }
-        completedProcessCount++;
+        };
     }
     
     // Method to add waiting time
     public static void addWaitingTime(long time) {
         // TODO: Protect this critical section with a lock
-        totalWaitingTime += time;
+        waitingTimeLock.lock();
+        try {            
+             totalWaitingTime += time;
+        } finally {
+            waitingTimeLock.unlock();
+        }
     }
     
     // Method to log execution
