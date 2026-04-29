@@ -46,17 +46,17 @@ Verified the repository link in an incognito window to ensure it is accessible.
 30 minutes.
 ---
 
-### Entry 2 - [Date, Time]
+### Entry 2 - [29/4/2026, 12:00 AM]
 **What I implemented**: 
-
+Implemented Task 1 and Task 2 by adding ReentrantLock to protect shared variables like counter and the execution log ArrayList.
 **Challenges encountered**: 
-
+Preventing potential deadlocks and handling ConcurrentModificationException in the list. 
 **How I solved it**: 
-
+Used try-finally blocks to ensure that the lock is always released in the finally section, even if an exception occurs.
 **Testing approach**: 
-
+Ran the simulation multiple times to verify that the final counts and logs were consistent across different runs.
 **Time spent**: 
-
+1.5 hours
 ---
 
 ### Entry 3 - [Date, Time]
