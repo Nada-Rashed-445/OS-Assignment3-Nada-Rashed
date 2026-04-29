@@ -153,6 +153,10 @@ In the original code, two primary race conditions exist:
 
 **Your Answer**:
 
+• The Difference: A ReentrantLock is a mutual exclusion mechanism that allows only one thread to access a resource at a time, whereas a Semaphore manages a set of permits to control how many threads can access a resource concurrently.  
+
+• Implementation: I used ReentrantLock for Tasks 1 and 2 to ensure exclusive access to the counters and the log list, preventing data corruption. I used a Semaphore with one permit (binary semaphore) for Task 3 to specifically control and synchronize concurrent CPU access between threads.
+
 [Your answer here - explain your implementation choices]
 
 ---
