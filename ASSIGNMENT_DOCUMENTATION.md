@@ -185,6 +185,14 @@ In the original code, two primary race conditions exist:
 
 **Your Answer**:
 
+For Task 1, I chose a Coarse-grained locking approach by using a single lock to protect all three counters.
+
+• Rationale: This choice was made to simplify the implementation and minimize the risk of complex deadlocks that can occur with multiple locks.  
+
+• Trade-offs: While coarse-grained locking is easier to manage, it can limit performance because threads must wait for the lock even if they are updating different, independent counters. Fine-grained locking (one lock per counter) would allow more threads to work simultaneously.  
+
+• Concurrency: Since the three counters are independent, a Fine-grained approach would provide better concurrency because it allows multiple threads to update different statistics at the same time without blocking each other.
+
 [Your answer here - explain coarse-grained vs fine-grained locking, independence of counters, concurrency implications. Show understanding of when to use each approach. 5-8 sentences expected.]
 
 ---
