@@ -33,17 +33,17 @@
 
 Document your development process with **minimum 3 entries** showing progression:
 
-### Entry 1 - [Date, Time]
+### Entry 1 - [28/4/2026, 11:00 PM]
 **What I implemented**: 
-
+Started the project by forking the repository and setting up the environment in VS Code. I also updated the studentID variable in SchedulerSimulationSync.java and made the first commit. 
 **Challenges encountered**: 
-
+Ensuring the GitHub repository was set to public to comply with the assignment requirements. 
 **How I solved it**: 
-
+Followed the "Danger Zone" settings in GitHub to change visibility to public.
 **Testing approach**: 
-
+Verified the repository link in an incognito window to ensure it is accessible.
 **Time spent**: 
-
+30 minutes.
 ---
 
 ### Entry 2 - [Date, Time]
