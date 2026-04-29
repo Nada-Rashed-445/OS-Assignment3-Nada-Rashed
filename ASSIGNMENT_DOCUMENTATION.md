@@ -17,8 +17,10 @@
 > Test the link in incognito/private mode before submitting.
 
 **Video Link**: [Paste your personal Gmail Google Drive link here]
+https://drive.google.com/file/d/1IlCCugwa81HVcL6SO0Ng67_f9hdtRZWe/view?usp=sharing
 
-**Video filename**: `[YourStudentID]_Assignment3_Synchronization.mp4`
+
+**Video filename**: `445052014_Assignment3_Synchronization.mp4`
 
 **Verification**:
 - [ ] Link is accessible (tested in incognito mode)
