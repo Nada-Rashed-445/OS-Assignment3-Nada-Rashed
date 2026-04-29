@@ -203,16 +203,33 @@ For Task 1, I chose a Coarse-grained locking approach by using a single lock to 
 
 **Which variables**: 
 
+contextSwitchCount, completedProcessCount, and totalWaitingTime.
+
 **Why they need protection**: 
+
+These variables are shared resources accessed by multiple threads. Without protection, a Race Condition could occur where multiple threads try to update the counters simultaneously, leading to inconsistent or incorrect data.
 
 **Synchronization mechanism used**: 
 
+ReentrantLock (Fine-grained locking).
+
 **Code snippet**:
-```java
-// Paste your implementation here
-```
+
+public static final ReentrantLock contextSwitchLock = new ReentrantLock();
+// ...
+public static void incrementContextSwitch() {
+    contextSwitchLock.lock();
+    try {
+        contextSwitchCount++;
+    } finally {
+        contextSwitchLock.unlock();
+    }
+}
+
 
 **Justification**: 
+
+The ReentrantLock ensures Mutual Exclusion, meaning only one thread can modify a specific counter at a time. Using separate locks for different counters (fine-grained) allows threads to update unrelated variables concurrently, improving performance.
 
 ---
 
