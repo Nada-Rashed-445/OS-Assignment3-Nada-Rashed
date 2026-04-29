@@ -442,15 +442,22 @@ Imagine a single-person bathroom in a busy coffee shop. The lock on the door is 
 ## Summary
 
 **Total time spent on assignment**: 
+5 hours 
 
 **Key takeaways**: 
-1. 
-2. 
-3. 
+1. Understanding the critical importance of thread synchronization in preventing race conditions and data corruption.
+
+2. Mastering the practical application of ReentrantLock and Semaphore to manage shared resources in Java.
+   
+3. Learning how to use try-finally blocks as a standard practice to ensure locks are always released and avoid system deadlocks.  
 
 **Most challenging aspect**: 
 
+Identifying all the hidden race conditions within the ArrayList and counters, and ensuring the synchronization didn't lead to performance bottlenecks or deadlocks. 
+
 **What I'm most proud of**: 
+
+Successfully creating a thread-safe CPU scheduler simulation that produces consistent, accurate results across multiple runs and documenting the process clearly in the development log. 
 
 ---
 
