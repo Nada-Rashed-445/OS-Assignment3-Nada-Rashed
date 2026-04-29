@@ -271,16 +271,35 @@ Applying a lock before adding to the list ensures that log entries are synchroni
 
 **Purpose of semaphore**: 
 
+To manage access to the CPU and ensure that the execution of processes is controlled.
+
 **Number of permits and why**: 
+
+1 permit. It acts as a Binary Semaphore to ensure that only one process can be "executing" on the CPU at any given time.
 
 **Where implemented**: 
 
+It is implemented in the run() and runToCompletion() methods of the Process class.
+
 **Code snippet**:
-```java
-// Paste your implementation here
-```
+
+public static final Semaphore cpuSemaphore = new Semaphore(1);
+// ...
+public void run() {
+    try {
+        SharedResources.cpuSemaphore.acquire();
+        try {
+            // Execution logic here...
+        } finally {
+            SharedResources.cpuSemaphore.release();
+        }
+    } catch (InterruptedException e) { ... }
+}
+
 
 **Effect on program behavior**: 
+
+It prevents overlapping output in the console (like the progress bars) and ensures that the simulation correctly mimics a single-core CPU scheduler where only one task runs at a time.
 
 ---
 
