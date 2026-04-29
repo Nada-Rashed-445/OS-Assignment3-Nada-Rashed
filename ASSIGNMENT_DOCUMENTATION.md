@@ -306,7 +306,8 @@ It prevents overlapping output in the console (like the progress bars) and ensur
 ## Part 4: Testing and Verification (2 marks)
 
 ### Test 1: Consistency Check
-**What I tested**: Running program multiple times to verify consistent results
+**What I tested**: Running the program multiple times to verify that shared counters and logs remain consistent across different executions.
+
 
 **Testing procedure**: 
 ```bash
@@ -314,45 +315,67 @@ It prevents overlapping output in the console (like the progress bars) and ensur
 ```
 
 **Results**: 
-(Show that running multiple times produces consistent, correct results)
+
+The final statistics (Total Completed Processes, Total Waiting Time) were consistent in every run, matching the number of processes created.
+
 
 **Why synchronization is necessary**: 
-(Explain what race conditions COULD occur without synchronization, even if you didn't observe them. Explain which shared resources need protection and why.)
+synchronization, a Race Condition could occur where multiple threads update contextSwitchCount or totalWaitingTime at the same time, leading to "lost updates" and incorrect final totals.
 
 **Conclusion**: 
+
+The use of ReentrantLock ensures that only one thread can modify shared variables at a time, providing data integrity.
 
 ---
 
 ### Test 2: Exception Testing
-**What I tested**: Checking for ConcurrentModificationException
+**What I tested**: Checking for ConcurrentModificationException when accessing the executionLog.
 
 **Testing procedure**: 
 
+Running the simulation with a large number of processes to ensure frequent simultaneous updates to the ArrayList.
+
 **Results**: 
 
+The program executed without any exceptions or crashes during log updates.
+
 **What this proves**: 
+
+This proves that logLock successfully protects the executionLog (which is an ArrayList and not thread-safe), preventing multiple threads from corrupting the list's internal structure during concurrent additions.
 
 ---
 
 ### Test 3: Correctness Verification
-**What I tested**: Verifying correct final values (total burst time, context switches, etc.)
+**What I tested**:Verifying that final summary values (completed processes, context switches) align with the logic of the scheduler.
 
 **Expected values**: 
 
+Completed Processes should exactly equal the number of processes (10-20 processes based on the Student ID).
+
 **Actual values**: 
 
+The "Total Completed Processes" in the output matched the initial number of processes in the simulation header.
+
 **Analysis**: 
+
+The synchronization logic is correct; no process was lost, and the cpuSemaphore properly managed the turn-taking of threads
 
 ---
 
 ### Test 4: Different Scenarios
-**Scenario tested**: [e.g., different time quantum, more processes, etc.]
+**Scenario tested**: Testing the scheduler with different timeQuantum values and a high number of processes.
 
 **Purpose**: 
 
+To observe how synchronization handles increased contention when many threads are waiting for the cpuSemaphore.
+
 **Results**: 
 
+Even with more processes, the cpuSemaphore maintained the "one-at-a-time" execution rule, and the logs remained orderly.
+
 **What I learned**: 
+
+Proper synchronization prevents "Interleaving" (tangled output) and ensures that even under heavy load, the shared resources remain accurate and reliable.
 
 ---
 
