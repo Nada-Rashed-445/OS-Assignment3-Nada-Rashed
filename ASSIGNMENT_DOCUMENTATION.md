@@ -237,16 +237,33 @@ The ReentrantLock ensures Mutual Exclusion, meaning only one thread can modify a
 
 **What resource**: 
 
+executionLog (an ArrayList of Strings).
+
 **Why it needs protection**: 
+
+The ArrayList class in Java is not thread-safe. If multiple process threads attempt to add logs at the same time, it can lead to data corruption or the application crashing.
 
 **Synchronization mechanism used**: 
 
+ReentrantLock.
+
 **Code snippet**:
-```java
-// Paste your implementation here
-```
+
+public static ReentrantLock logLock = new ReentrantLock();
+// ...
+public static void logExecution(String message) {
+    logLock.lock();
+    try {
+        executionLog.add(message);
+    } finally {
+        logLock.unlock();
+    }
+}
+
 
 **Justification**: 
+
+Applying a lock before adding to the list ensures that log entries are synchronized, maintaining the integrity of the execution history.
 
 ---
 
