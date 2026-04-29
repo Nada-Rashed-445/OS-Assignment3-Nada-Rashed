@@ -35,41 +35,71 @@ Document your development process with **minimum 3 entries** showing progression
 
 ### Entry 1 - [28/4/2026, 11:00 PM]
 **What I implemented**: 
+
 Started the project by forking the repository and setting up the environment in VS Code. I also updated the studentID variable in SchedulerSimulationSync.java and made the first commit. 
+
 **Challenges encountered**: 
+
 Ensuring the GitHub repository was set to public to comply with the assignment requirements. 
+
 **How I solved it**: 
+
 Followed the "Danger Zone" settings in GitHub to change visibility to public.
+
 **Testing approach**: 
+
 Verified the repository link in an incognito window to ensure it is accessible.
+
 **Time spent**: 
+
 30 minutes.
+
 ---
 
 ### Entry 2 - [29/4/2026, 12:00 AM]
 **What I implemented**: 
+
 Implemented Task 1 and Task 2 by adding ReentrantLock to protect shared variables like counter and the execution log ArrayList.
+
 **Challenges encountered**: 
+
 Preventing potential deadlocks and handling ConcurrentModificationException in the list. 
+
 **How I solved it**: 
+
 Used try-finally blocks to ensure that the lock is always released in the finally section, even if an exception occurs.
+
 **Testing approach**: 
+
 Ran the simulation multiple times to verify that the final counts and logs were consistent across different runs.
+
 **Time spent**: 
+
 1.5 hours
+
 ---
 
 ### Entry 3 - [29/4/2026, 2;00 AM]
 **What I implemented**: 
-Completed Task 3 by adding a Semaphore with one permit to control CPU access and recorded the video demonstration. 
+
+Completed Task 3 by adding a Semaphore with one permit to control CPU access and recorded the video demonstration.
+
 **Challenges encountered**: 
+
 Explaining the technical difference between a mutex lock and a binary semaphore during the video walkthrough.
+
 **How I solved it**: 
+
 Reviewed the README.md theory section to clearly articulate how the semaphore manages concurrent access.
+
 **Testing approach**: 
+
 Performed a final check of the commit history to ensure there are at least 4 meaningful commits.
+
 **Time spent**: 
+
 2 hours
+
 ---
 
 ### Entry 4 - [Date, Time]
