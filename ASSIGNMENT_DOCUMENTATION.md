@@ -59,17 +59,17 @@ Ran the simulation multiple times to verify that the final counts and logs were 
 1.5 hours
 ---
 
-### Entry 3 - [Date, Time]
+### Entry 3 - [29/4/2026, 2;00 AM]
 **What I implemented**: 
-
+Completed Task 3 by adding a Semaphore with one permit to control CPU access and recorded the video demonstration. 
 **Challenges encountered**: 
-
+Explaining the technical difference between a mutex lock and a binary semaphore during the video walkthrough.
 **How I solved it**: 
-
+Reviewed the README.md theory section to clearly articulate how the semaphore manages concurrent access.
 **Testing approach**: 
-
+Performed a final check of the commit history to ensure there are at least 4 meaningful commits.
 **Time spent**: 
-
+2 hours
 ---
 
 ### Entry 4 - [Date, Time]
