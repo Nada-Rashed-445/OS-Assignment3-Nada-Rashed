@@ -137,6 +137,12 @@ Performed a final check of the commit history to ensure there are at least 4 mea
 - What incorrect behavior could occur?
 
 **Your Answer**:
+In the original code, two primary race conditions exist:
+
+• Statistic Counters: The shared resources affected are variables like contextSwitchCount and completedProcessCount. Concurrent access is a problem because increment operations are not atomic, meaning two threads could read the same value and overwrite each other's updates. This results in incorrect final totals for the simulation statistics.  
+
+• Execution Log: The shared resource is the ArrayList used to store the execution history. When multiple threads try to add data to the list simultaneously, it can trigger a ConcurrentModificationException or lead to corrupted data entries. 
+
 
 [Your answer here - 4-6 sentences with code examples]
 
