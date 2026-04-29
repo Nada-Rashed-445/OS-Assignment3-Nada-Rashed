@@ -383,6 +383,8 @@ Proper synchronization prevents "Interleaving" (tangled output) and ensures that
 
 ### What I learned about synchronization:
 
+Through this assignment, I learned that synchronization is essential when multiple threads share access to the same resources, such as the executionLog and global counters. I discovered that without mechanisms like ReentrantLock, a race condition can occur, causing threads to overwrite each other's data. Implementing fine-grained locking taught me how to protect specific variables without slowing down the entire system unnecessarily. I also gained experience using a Semaphore as a gatekeeper to ensure that only one process executes on the CPU at a time. Dealing with thread-safe issues in ArrayList highlighted the importance of protecting standard collections in a concurrent environment. One of the key challenges was ensuring that locks were always released in a finally block to prevent deadlocks. Overall, I now understand that synchronization provides the predictability and data integrity required for a functional operating system.
+
 [6-8 sentences about key concepts, challenges, insights]
 
 ---
@@ -393,11 +395,17 @@ Give TWO examples where synchronization is critical:
 
 **Example 1**: 
 
+When two different ATMs try to withdraw money from the same bank account at the exact same time, synchronization is critical to ensure the balance is updated correctly and no one withdraws more than the available funds.
+
 **Example 2**: 
+
+When thousands of users try to book the last available seat on a flight simultaneously, synchronization ensures that the seat is only assigned to one person and that the "available seats" counter doesn't become negative.
 
 ---
 
 ### How I would explain synchronization to others:
+
+Imagine a single-person bathroom in a busy coffee shop. The lock on the door is the synchronization mechanism. Even if ten people are waiting in line (the Ready Queue), only the person with the key (the Lock/Semaphore) can enter and use the facility (the CPU). While they are inside, no one else can enter, which prevents a "messy" situation where multiple people try to use the same space at once. Once they finish, they unlock the door and pass the key to the next person in line. In programming, synchronization is just that—a way to make threads wait their turn so they don't crash into each other while using shared data.
 
 [Explain to someone who just finished Assignment 1 - use simple terms and analogies]
 
@@ -405,7 +413,7 @@ Give TWO examples where synchronization is critical:
 
 ## Part 6: GitHub Repository Information
 
-**Repository URL**: 
+**Repository URL**: https://github.com/Nada-Rashed-445/OS-Assignment3-Nada-Rashed/blob/main/ASSIGNMENT_DOCUMENTATION.md
 
 **Number of commits**: 
 
