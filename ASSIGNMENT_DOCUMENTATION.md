@@ -166,6 +166,12 @@ In the original code, two primary race conditions exist:
 
 **Your Answer**:
 
+• Definition: A deadlock is a situation where two or more threads are blocked forever, each waiting for a resource held by the other.  
+
+• Prevention Techniques: Two key techniques are Lock Ordering (always acquiring locks in a consistent predefined order) and using try-finally blocks.  
+
+• My Implementation: I prevented deadlocks by placing the unlock() method inside a finally block. This ensures that even if an error occurs during execution, the lock is guaranteed to be released, allowing other threads to proceed. 
+
 [Your answer here - reference try-finally blocks, lock ordering, etc.]
 
 ---
