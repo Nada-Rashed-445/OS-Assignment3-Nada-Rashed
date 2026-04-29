@@ -415,13 +415,27 @@ Imagine a single-person bathroom in a busy coffee shop. The lock on the door is 
 
 **Repository URL**: https://github.com/Nada-Rashed-445/OS-Assignment3-Nada-Rashed/blob/main/ASSIGNMENT_DOCUMENTATION.md
 
-**Number of commits**: 
+**Number of commits**: 9
 
 **Commit messages**: 
-1. 
-2. 
-3. 
-4. 
+
+1.set my student ID: 445052014 
+
+2. defind ReentrantLock
+
+3. Add a ReentrantLock(s)
+
+4. Method to increment context switch counter
+
+5. Method to increment completed process counter
+
+6. Method to add waiting time
+
+7. Method to add waiting time
+
+8. try and Finally
+
+9. Similar synchronization for method runToCompletion 
 
 ---
 
